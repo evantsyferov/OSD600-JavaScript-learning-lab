@@ -1,0 +1,25 @@
+{
+  "name": "lab7",
+  "version": "1.0.0",
+  "description": "Learning JavaScript Lab",
+  "main": "seneca.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint *.js",
+    "test": "npm run -s lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evantsyferov/OSD600-JavaScript-learning-lab.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evantsyferov/OSD600-JavaScript-learning-lab/issues"
+  },
+  "homepage": "https://github.com/evantsyferov/OSD600-JavaScript-learning-lab#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
