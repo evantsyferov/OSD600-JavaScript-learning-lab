@@ -9,7 +9,7 @@ exports.isValidEmail = function(email) {
     if(email==/[A-Za-z]@myseneca.ca/)
         return true;
     else
-        retrn false;
+        return false;
 };
 
 /**
