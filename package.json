@@ -4,7 +4,7 @@
   "description": "Learning JavaScript Lab",
   "main": "seneca.js",
   "scripts": {
-    "lint": "eslint *.js",
+    "lint": "./node_modules/.bin/eslint *.js",
     "test": "npm run -s lint"
   },
   "repository": {
