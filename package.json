@@ -5,8 +5,9 @@
   "main": "seneca.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint *.js",
-    "test": "npm run -s lint"
-  },
+    "jest": "node_modules/.bin/jest",
+    "test": "npm run -s lint && npm run jest"
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/evantsyferov/OSD600-JavaScript-learning-lab.git"
@@ -20,6 +21,7 @@
   "devDependencies": {
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.1",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^19.0.2"
   }
 }
