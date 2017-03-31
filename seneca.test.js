@@ -15,10 +15,14 @@ describe('seneca.isValidEmail()', function() {
     var gmailAddress = 'someone@gmail.com';
     expect(seneca.isValidEmail(gmailAddress)).toBe(false);
   });
+  test('returns false for a non-myseneca address', function() {
+    var hotmailAddress = 'someone@hotmail.com';
+    expect(seneca.isValidEmail(hotmailAddress)).toBe(false);
+  });
     
   test('returns false for a value that is not a string', function() {
-    var numAddress = 'someone@gmail.com';
-    expect(seneca.isValidEmail(!numAddress)).toBe(false);
+    var numAddress = 1;
+    expect(seneca.isValidEmail(numAddress)).toBeInstanceOf(String);
   });
     
   test('returns false for value that is null', function() {
