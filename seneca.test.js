@@ -16,6 +16,11 @@ describe('seneca.isValidEmail()', function() {
     expect(seneca.isValidEmail(gmailAddress)).toBe(false);
   });
     
+  test('returns false for a value that is not a string', function() {
+    var numAddress = 'someone@gmail.com';
+    expect(seneca.isValidEmail(!numAddress)).toBe(false);
+  });
+    
   test('returns false for value that is null', function() {
     var fakeAddress = null;
     expect(seneca.isValidEmail(fakeAddress)).toBe(false);
@@ -41,6 +46,14 @@ describe('seneca.formatSenecaEmail()', function() {
     var name = "mshaw";
     expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
   });
-
-
+  test('adds @myseneca.ca to the end of name that has spaces', function() {
+    var name = " mshaw ";
+      name.trim();
+    expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
+  });
+  test('name is null', function() {
+    var name = null;
+    expect(seneca.formatSenecaEmail(name)).toBe(false);
+  });    
+ 
 });
