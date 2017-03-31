@@ -7,7 +7,7 @@ var seneca = require('./seneca');
 describe('seneca.isValidEmail()', function() {
 
   test('returns true for simple myseneca address', function() {
-    var simpleEmail = 'someone@myseneca.ca';
+    var simpleEmail. = 'someone@myseneca.ca';
     expect(seneca.isValidEmail(simpleEmail)).toBe(true);
   });
 
@@ -15,7 +15,21 @@ describe('seneca.isValidEmail()', function() {
     var gmailAddress = 'someone@gmail.com';
     expect(seneca.isValidEmail(gmailAddress)).toBe(false);
   });
-
+    
+  test('returns false for value that is null', function() {
+    var fakeAddress = null;
+    expect(seneca.isValidEmail(fakeAddress)).toBe(false);
+  });
+    
+  test('returns true for  professor seneca address', function() {
+    var professorEmail = 'someone.lastname@senecacollege.ca';
+    expect(seneca.isValidEmail(professorEmail)).toBe(true);
+  });
+    
+  test('returns true for  old seneca address', function() {
+    var oldEmail = 'david.humphrey@senecac.on.ca';
+    expect(seneca.isValidEmail(oldEmail)).toBe(true);
+  });
 });
 
 /**
@@ -27,5 +41,6 @@ describe('seneca.formatSenecaEmail()', function() {
     var name = "mshaw";
     expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
   });
+
 
 });
