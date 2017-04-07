@@ -12,15 +12,20 @@ exports.isValidEmail = function (email) {
    // emailval = true;
 //  }
     // add multiple returns
-    if(emailreg=== true){
-        return /[A-Za-z].[A-Za-z]@senecacollege.ca$/.test(email.trim);
+    if(!/myseneca.ca$/.test(email.trim)){
+      const varemail = /[A-Za-z].[A-Za-z]@senecacollege.ca$/.test(email.trim);
+     if(!varemail){
+         const varemail =/[A-Za-z].[A-Za-z]@senecac.on.ca$/.test(email.trim);
+     }
+     else
+         return true;
+        if (!varemail){
+            return false;
+        }
     }
-   else{}
-      return/[A-Za-z].[A-Za-z]@senecac.on.ca$/.test(email.trim);
-        if(emailreg=== true) {
-        
-    }
-  return /myseneca.ca$/.test(email.trim);
+   else
+      return true;
+    
 };
 
 /**

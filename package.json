@@ -4,10 +4,10 @@
   "description": "Learning JavaScript Lab",
   "main": "seneca.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint *.js",
+    "lint": "./node_modules/.bin/eslint seneca.js",
     "jest": "node_modules/.bin/jest",
     "test": "npm run -s lint && npm run jest"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/evantsyferov/OSD600-JavaScript-learning-lab.git"
