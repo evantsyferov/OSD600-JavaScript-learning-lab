@@ -51,11 +51,11 @@ describe('seneca.isValidEmail()', function() {
 describe('seneca.formatSenecaEmail()', function() {
 
   test('adds @myseneca.ca to the end of name', function() {
-    var name = "mshaw";
+    var name = 'mshaw';
     expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
   });
   test('adds @myseneca.ca to the end of name that has spaces', function() {
-    var name = " mshaw ";
+    var name = ' mshaw ';
     expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
   });
   test('name is null', function() {
