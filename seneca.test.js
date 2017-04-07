@@ -56,20 +56,19 @@ describe('seneca.formatSenecaEmail()', function() {
   });
   test('adds @myseneca.ca to the end of name that has spaces', function() {
     var name = " mshaw ";
-      name.trim();
     expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
   });
   test('name is null', function() {
     var name = null;
-    expect(seneca.formatSenecaEmail(name)).toBe();
+    expect(seneca.formatSenecaEmail(name)).toBe(false);
   });
   test('name is  a number', function() {
     var name = 1;
-    expect(seneca.formatSenecaEmail(name)).toBe();
+    expect(seneca.formatSenecaEmail(name)).toBe(false);
   }); 
   test('name is  a boolean', function() {
     var name = true;
-    expect(seneca.formatSenecaEmail(name)).toBe();
+    expect(seneca.formatSenecaEmail(name)).toBe(false);
   }); 
  
 });
