@@ -7,7 +7,7 @@ var seneca = require('./seneca');
 describe('seneca.isValidEmail()', function() {
 
   test('returns true for simple myseneca address', function() {
-    var simpleEmail. = 'someone@myseneca.ca';
+    var simpleEmail = 'someone@myseneca.ca';
     expect(seneca.isValidEmail(simpleEmail)).toBe(true);
   });
 
@@ -20,10 +20,14 @@ describe('seneca.isValidEmail()', function() {
     expect(seneca.isValidEmail(hotmailAddress)).toBe(false);
   });
     
-  test('returns false for a value that is not a string', function() {
-    var numAddress = 1;
-    expect(seneca.isValidEmail(numAddress)).toBeInstanceOf(String);
-  });
+  test('returns false if email is  a number', function() {
+    var name = 1;
+    expect(seneca.formatSenecaEmail(name)).toBe();
+  }); 
+  test('returns false if email is a boolean', function() {
+    var name = true;
+    expect(seneca.formatSenecaEmail(name)).toBe();
+  }); 
     
   test('returns false for value that is null', function() {
     var fakeAddress = null;
@@ -57,7 +61,15 @@ describe('seneca.formatSenecaEmail()', function() {
   });
   test('name is null', function() {
     var name = null;
-    expect(seneca.formatSenecaEmail(name)).toBe(false);
-  });    
+    expect(seneca.formatSenecaEmail(name)).toBe();
+  });
+  test('name is  a number', function() {
+    var name = 1;
+    expect(seneca.formatSenecaEmail(name)).toBe();
+  }); 
+  test('name is  a boolean', function() {
+    var name = true;
+    expect(seneca.formatSenecaEmail(name)).toBe();
+  }); 
  
 });
