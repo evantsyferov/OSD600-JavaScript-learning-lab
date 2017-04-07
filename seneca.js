@@ -6,26 +6,15 @@
  * of a valid Seneca College email address, `false` othewise.
  */
 exports.isValidEmail = function (email) {
- // if (email === /[A-Za-z]@myseneca.ca/ ||
-    //email === /[A-Za-z].[A-Za-z]@senecacollege.ca/ 
-    //|| email === /[A-Za-z].[A-Za-z]@senecac.on.ca/) {
-   // emailval = true;
-//  }
-    // add multiple returns
-    if(typeof email!= 'string') {
-        return false;
-    }
-    else {
-     email= email.trim();
-   
-     if(!/@myseneca.ca$/.test(email) && !/[A-Za-z].[A-Za-z]@senecacollege.ca$/.test(email)
-       && !/[A-Za-z].[A-Za-z]@senecac.on.ca$/.test(email)) {
-        return false;
-     }
-     else{
-       return true;
-     }
-    }
+  if (typeof email !== 'string') {
+    return false;
+  }
+  email.trim();
+  if (!/@myseneca.ca$/.test(email) && !/[A-Za-z].[A-Za-z]@senecacollege.ca$/.test(email)
+    && !/[A-Za-z].[A-Za-z]@senecac.on.ca$/.test(email)) {
+    return false;
+  }
+  return true;
 };
 
 /**
@@ -33,9 +22,10 @@ exports.isValidEmail = function (email) {
  * this person. NOTE: the email doesn't need to be real/valid/active.
  */
 exports.formatSenecaEmail = function (name) {
- if(typeof name=== 'string') {
-    name =name.trim(); 
+  if (typeof name === 'string') {
+    name.trim();
     const email = name.concat('@myseneca.ca');
     return email;
- }
+  }
+  return false;
 };

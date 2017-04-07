@@ -21,12 +21,12 @@ describe('seneca.isValidEmail()', function() {
   });
     
   test('returns false if email is  a number', function() {
-    var name = 1;
-    expect(seneca.formatSenecaEmail(name)).toBe();
+    var numemail = 1;
+    expect(seneca.formatSenecaEmail(numemail)).toBe(false);
   }); 
   test('returns false if email is a boolean', function() {
-    var name = true;
-    expect(seneca.formatSenecaEmail(name)).toBe();
+    var boolemail = true;
+    expect(seneca.formatSenecaEmail(boolemail)).toBe(false);
   }); 
     
   test('returns false for value that is null', function() {
