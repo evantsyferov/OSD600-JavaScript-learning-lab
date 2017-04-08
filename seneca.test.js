@@ -21,26 +21,26 @@ describe('seneca.isValidEmail()', function() {
   });
     
   test('returns false if email is  a number', function() {
-    var numemail = 1;
+    const numemail = 1;
     expect(seneca.formatSenecaEmail(numemail)).toBe(false);
   }); 
   test('returns false if email is a boolean', function() {
-    var boolemail = true;
+    const boolemail = true;
     expect(seneca.formatSenecaEmail(boolemail)).toBe(false);
   }); 
     
   test('returns false for value that is null', function() {
-    var fakeAddress = null;
+    const fakeAddress = null;
     expect(seneca.isValidEmail(fakeAddress)).toBe(false);
   });
     
   test('returns true for  professor seneca address', function() {
-    var professorEmail = 'someone.lastname@senecacollege.ca';
+    const professorEmail = 'someone.lastname@senecacollege.ca';
     expect(seneca.isValidEmail(professorEmail)).toBe(true);
   });
     
   test('returns true for  old seneca address', function() {
-    var oldEmail = 'david.humphrey@senecac.on.ca';
+    const oldEmail = 'david.humphrey@senecac.on.ca';
     expect(seneca.isValidEmail(oldEmail)).toBe(true);
   });
 });
@@ -51,23 +51,23 @@ describe('seneca.isValidEmail()', function() {
 describe('seneca.formatSenecaEmail()', function() {
 
   test('adds @myseneca.ca to the end of name', function() {
-    var name = 'mshaw';
+    const name = 'mshaw';
     expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
   });
   test('adds @myseneca.ca to the end of name that has spaces', function() {
-    var name = ' mshaw ';
+    const name = ' mshaw ';
     expect(seneca.formatSenecaEmail(name)).toBe('mshaw@myseneca.ca');
   });
   test('name is null', function() {
-    var name = null;
+    const name = null;
     expect(seneca.formatSenecaEmail(name)).toBe(false);
   });
   test('name is  a number', function() {
-    var name = 1;
+    const name = 1;
     expect(seneca.formatSenecaEmail(name)).toBe(false);
   }); 
   test('name is  a boolean', function() {
-    var name = true;
+    const name = true;
     expect(seneca.formatSenecaEmail(name)).toBe(false);
   }); 
  

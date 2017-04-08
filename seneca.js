@@ -23,8 +23,8 @@ exports.isValidEmail = function (email) {
  */
 exports.formatSenecaEmail = function (name) {
   if (typeof name === 'string') {
-    name.trim();
-    const email = name.concat('@myseneca.ca');
+    const nname = name.trim();
+    const email = nname.concat('@myseneca.ca');
     return email.trim();
   }
   return false;
