@@ -39,11 +39,12 @@ app.get('/format/:name', function (req, res) {
     email: seneca.formatSenecaEmail(name)
   });
 });
-
-GET http://localhost:3000/healthcheck
-
-{"uptime":52.349}
-
+// GET http://localhost:3000/healthcheck
+app.get('/healthcheck', function (req, res) {
+  res.json({
+    uptime: process.uptime()
+  });
+});
 // Start our web server on port 3000
 app.listen(port, function () {
   console.log('Server started on http://localhost:' + port);
